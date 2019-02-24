@@ -1,49 +1,77 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
-
-type Props = {};
-export default class App extends Component<Props> {
+import { Text, View,StyleSheet} from 'react-native';
+export default class App extends Component{
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+      <View style={{
+        flex: 1,
+        flexDirection: 'column',
+      }}>
+        <View style={{flex:2,justifyContent: 'flex-end',margin:20}} >
+          <Text style={{textAlign:"right"}}>0</Text>
+        </View>
+        <View style={{flex:1,flexDirection: 'row',backgroundColor: 'powderblue'}} >
+          <Text style={styles.button}>MC</Text>
+          <Text style={styles.button}>MR</Text>
+          <Text style={styles.button}>MS</Text>
+          <Text style={styles.button}>M+</Text>
+          <Text style={styles.button}>M-</Text>
+        </View>
+        <View style={{flex:1,flexDirection: 'row',backgroundColor: 'powderblue'}} >
+          <Text style={styles.button}>a</Text>
+          <Text style={styles.button}>CE</Text>
+          <Text style={styles.button}>C</Text>
+          <Text style={styles.button}>+-</Text>
+          <Text style={styles.button}>√</Text>
+        </View>
+        <View style={{flex:1,flexDirection: 'row',backgroundColor: 'powderblue'}} >
+          <Text style={styles.button}>7</Text>
+          <Text style={styles.button}>8</Text>
+          <Text style={styles.button}>9</Text>
+          <Text style={styles.button}>/</Text>
+          <Text style={styles.button}>%</Text>
+        </View>
+        <View style={{flex:1,flexDirection: 'row',backgroundColor: 'powderblue'}} >
+          <Text style={styles.button}>4</Text>
+          <Text style={styles.button}>5</Text>
+          <Text style={styles.button}>6</Text>
+          <Text style={styles.button}>*</Text>
+          <Text style={styles.button}>1/x</Text>
+        </View>
+        <View style={{flex:2,flexDirection: 'row'}}>
+          <View style={{flex:4,flexDirection: 'column',backgroundColor: 'powderblue'}} >
+            <View style={{flex:1,flexDirection: 'row',backgroundColor: 'powderblue'}} >
+              <Text style={styles.button}>1</Text>
+              <Text style={styles.button}>2</Text>
+              <Text style={styles.button}>3</Text>
+              <Text style={styles.button}>-</Text>
+            </View>
+            <View style={{flex:1,flexDirection: 'row'}} >
+              <Text style={{flex:2,backgroundColor: 'powderblue',borderWidth:5,
+    borderColor:"white",textAlign:"center",padding:10}}>0</Text>
+              <Text style={styles.button}>.</Text>
+              <Text style={styles.button}>+</Text> 
+            </View>
+          
+          </View>
+          
+          <View style={{flex:1, backgroundColor: 'skyblue'}} >
+            <Text style={styles.button}>=</Text> 
+          </View>
+        
+        </View>
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+const styles=StyleSheet.create({
+  button: 
+    {flex:1,
+      width:"100%",
+    borderWidth:5,
+    borderColor:"white",
+  textAlign:"center",
+  padding:10}
+  }
+);
